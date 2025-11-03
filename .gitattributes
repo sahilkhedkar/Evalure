@@ -1,0 +1,11 @@
+# .gitattributes - tell GitHub Linguist to ignore compiled or vendored code
+build/* linguist-vendored
+dist/* linguist-vendored
+.next/* linguist-vendored
+node_modules/* linguist-vendored
+lib/* linguist-vendored
+out/* linguist-vendored
+
+# Force files to be counted as TypeScript
+*.ts linguist-language=TypeScript
+*.tsx linguist-language=TypeScript
