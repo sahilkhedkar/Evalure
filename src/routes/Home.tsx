@@ -1,5 +1,5 @@
 
-import './App.css'
+import '../App.css'
 import Navbar from '../components/Navbar'
 import ResumeCard from '../components/ResumeCard'
 import { resumes } from '../constants'
