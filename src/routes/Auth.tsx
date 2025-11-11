@@ -1,17 +1,21 @@
 import { useEffect } from "react";
 import { usePuterStore } from "../lib/puter";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Auth = () => {
 
-  const {isLoading , auth} = usePuterStore()
+  const {isLoading , auth} = usePuterStore();
+  const location = useLocation();
+  const next = location.search.split('next=')[1]
+  const navigate = useNavigate()
 
    useEffect(() => {
     document.title = "Evalure | Auth";
   }, []);
 
   useEffect(() => {
-
-  },[auth.isAuthenticated])
+    if(auth.isAuthenticated) (next)
+  },[auth.isAuthenticated , next])
 
   return (
     <main className="bg-[url('/images/bg-main.svg')] bg-cover min-h-screen flex items-center justify-center">
